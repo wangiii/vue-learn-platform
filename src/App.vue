@@ -1,32 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <a-layout>
+      <a-layout-header>
+        <router-link to="/">
+          <div class="topLogo">
+            华商e学堂
+          </div>
+        </router-link>
+        <a-button-group class="loginButton">
+          <a-button type="link">登录</a-button>
+          <a-button type="link">注册</a-button>
+        </a-button-group>
+      </a-layout-header>
+      <a-layout-content>
+        <router-view />
+      </a-layout-content>
+      <!-- <a-layout-footer class="footer">Footer</a-layout-footer> -->
+    </a-layout>
   </div>
 </template>
 
 <style lang="less">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.topLogo {
+  color: white;
+  display: inline;
+  font-size: 30px;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.loginButton {
+  float: right;
 }
 </style>
