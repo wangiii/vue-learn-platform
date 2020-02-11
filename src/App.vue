@@ -7,8 +7,32 @@
             华商e学堂
           </div>
         </router-link>
-        <a-button-group class="loginButton">
-          <a-button type="link">登录</a-button>
+        <a-dropdown v-if="name" class="loginButton">
+          <a class="ant-dropdown-link" href="#">
+            {{ name }} <a-icon type="down" />
+          </a>
+          <a-menu slot="overlay">
+            <a-menu-item>
+              <a href="#">个人中心</a>
+            </a-menu-item>
+            <a-menu-item>
+              <a href="#" @click="logout">退出登录</a>
+            </a-menu-item>
+          </a-menu>
+        </a-dropdown>
+        <!-- <a-button-group class="loginButton" v-if="name">
+          <a-button type="link">
+            <router-link to="/login">
+              {{ name }}
+            </router-link>
+          </a-button>
+        </a-button-group> -->
+        <a-button-group class="loginButton" v-else>
+          <a-button type="link">
+            <router-link to="/login">
+              登录
+            </router-link>
+          </a-button>
           <a-button type="link">注册</a-button>
         </a-button-group>
       </a-layout-header>
@@ -19,6 +43,30 @@
     </a-layout>
   </div>
 </template>
+
+<script>
+export default {
+  data: function() {
+    return {
+      name: ""
+    };
+  },
+  methods: {
+    setName() {
+      this.name = this.$cookies.get("userName");
+    },
+    logout() {
+      this.$cookies.remove("userName");
+      this.$cookies.remove("token");
+      this.$cookies.remove("phone");
+      location.replace("/");
+    }
+  },
+  created: function() {
+    this.setName();
+  }
+};
+</script>
 
 <style lang="less">
 .topLogo {
