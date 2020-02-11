@@ -13,20 +13,13 @@
           </a>
           <a-menu slot="overlay">
             <a-menu-item>
-              <a href="#">个人中心</a>
+              <a href="#" @click="setting">修改密码</a>
             </a-menu-item>
             <a-menu-item>
               <a href="#" @click="logout">退出登录</a>
             </a-menu-item>
           </a-menu>
         </a-dropdown>
-        <!-- <a-button-group class="loginButton" v-if="name">
-          <a-button type="link">
-            <router-link to="/login">
-              {{ name }}
-            </router-link>
-          </a-button>
-        </a-button-group> -->
         <a-button-group class="loginButton" v-else>
           <a-button type="link">
             <router-link to="/login">
@@ -60,6 +53,9 @@ export default {
       this.$cookies.remove("token");
       this.$cookies.remove("phone");
       location.replace("/");
+    },
+    setting() {
+      this.$router.replace("/setting");
     }
   },
   created: function() {

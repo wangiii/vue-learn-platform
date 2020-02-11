@@ -93,9 +93,10 @@ export default {
 #box ul {
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 10px;
 }
 #box li {
-  padding: 3px;
+  padding-top: 10px;
   list-style: none;
   margin-right: 15px;
   width: 200px;
@@ -117,6 +118,7 @@ export default {
 }
 .container {
   width: 966px;
-  background: rgba(255, 255, 255, 0.529);
+  margin-bottom: -16px;
+  background: rgba(255, 255, 255, 0.413);
 }
 </style>
