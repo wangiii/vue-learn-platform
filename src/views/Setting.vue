@@ -56,7 +56,15 @@ export default {
       password: ""
     };
   },
+  created: function() {
+    this.checkLogin();
+  },
   methods: {
+    checkLogin() {
+      if (this.$cookies.get("token") == null) {
+        this.$router.replace("/");
+      }
+    },
     changePassword() {
       if (this.password == this.oldPassword) {
         alert("新旧密码不能相同！");

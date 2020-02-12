@@ -13,7 +13,8 @@ import {
   Card,
   Form,
   Input,
-  Icon
+  Icon,
+  Select
 } from "ant-design-vue";
 import { BootstrapVue } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
@@ -31,6 +32,7 @@ Vue.use(Card);
 Vue.use(Form);
 Vue.use(Input);
 Vue.use(Icon);
+Vue.use(Select);
 Vue.use(BootstrapVue);
 
 new Vue({

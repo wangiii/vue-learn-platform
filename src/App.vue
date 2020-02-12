@@ -26,7 +26,11 @@
               登录
             </router-link>
           </a-button>
-          <a-button type="link">注册</a-button>
+          <a-button type="link">
+            <router-link to="/register">
+              注册
+            </router-link>
+          </a-button>
         </a-button-group>
       </a-layout-header>
       <a-layout-content>
