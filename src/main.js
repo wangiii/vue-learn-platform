@@ -14,7 +14,8 @@ import {
   Form,
   Input,
   Icon,
-  Select
+  Select,
+  Table
 } from "ant-design-vue";
 import { BootstrapVue } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
@@ -33,6 +34,7 @@ Vue.use(Form);
 Vue.use(Input);
 Vue.use(Icon);
 Vue.use(Select);
+Vue.use(Table);
 Vue.use(BootstrapVue);
 
 new Vue({

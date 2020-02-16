@@ -21,8 +21,10 @@
         <ul>
           <li v-for="course in courses" :key="course.id">
             <a-card hoverable>
-              <img alt="example" :src="course.cover" />
-              <h5 class="courseName" align="center">{{ course.name }}</h5>
+              <router-link :to="{ path: '/course/' + course.id }">
+                <img alt="课程封面" :src="course.cover" />
+                <h5 class="courseName" align="center">{{ course.name }}</h5>
+              </router-link>
             </a-card>
           </li>
         </ul>
