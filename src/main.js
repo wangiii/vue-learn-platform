@@ -21,6 +21,11 @@ import { BootstrapVue } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
+import VideoPlayer from "vue-video-player";
+require("video.js/dist/video-js.css");
+require("vue-video-player/src/custom-theme.css");
+Vue.use(VideoPlayer);
+
 Vue.config.productionTip = false;
 Vue.use(VueCookies);
 Vue.use(Button);

@@ -5,6 +5,7 @@ import Course from "../views/Course.vue";
 import Login from "../views/Login.vue";
 import Setting from "../views/Setting.vue";
 import Register from "../views/Register.vue";
+import Video from "../views/Video.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: "/register",
     name: "register",
     component: Register
+  },
+  {
+    path: "/video",
+    name: "video",
+    component: Video
   }
 ];
 

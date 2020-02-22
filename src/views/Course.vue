@@ -60,7 +60,7 @@
             :pagination="pagination"
           >
             <template slot="url" slot-scope="index">
-              <a @click="download(index)">播放</a>
+              <a @click="playVideo(index)">播放</a>
             </template>
           </a-table>
         </a-layout-content>
@@ -75,7 +75,7 @@ const columns = [
   {
     title: "标题",
     dataIndex: "name",
-    width: "50%"
+    width: "40%"
   },
   {
     title: "上传教师",
@@ -105,12 +105,15 @@ export default {
       columns,
       pagination: {
         total: 0,
-        pageSize: 4,
+        pageSize: 8,
         showTotal: total => `共 ${total} 条`
       }
     };
   },
   methods: {
+    playVideo(index) {
+      this.$router.push({ name: "video", params: { url: index.url } });
+    },
     download(index) {
       console.log(index);
       window.open(index.url);
@@ -160,6 +163,7 @@ export default {
   mounted() {
     this.courseId = this.$route.params.courseId;
     if (this.$cookies.get("token") == null) {
+      alert("请先登录！");
       this.$router.replace("/");
     }
     this.initCourse();
